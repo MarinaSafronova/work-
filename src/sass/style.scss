@@ -158,6 +158,10 @@ header{
     letter-spacing: 2.5px;
     line-height: 36px;
   }
+  .item-sl {
+    display: block;
+    margin-right: 1px;
+  }
   .item-sl img{
     position: relative;
     z-index:1;
@@ -183,15 +187,26 @@ header{
 .slick-dots {
   position: absolute;
   right: 65px;
-  width: 42px;
-  top:50%;
+  width: 65px;
+  top:45%;
   display:block;
   text-align: right;
   height: 40px;
-  @include translate(0,-50%);
+  @include translate(0,-45%);
   bottom: inherit;
 }
-.slick-dots li{
+.slick-dots li strong {
+  display: block;
+  margin-right:60px;
+  position:relative;
+  top:8px;
+  color:#9ca2ad;
+}
+.slick-dots strong{
+  display: block;
+  margin-right: 10px;
+}
+.slick-dots span{
   display: inline-block;
   width: 24px;
   height: 2px;
@@ -202,15 +217,18 @@ header{
   margin: 0 0 50px 0;
   transition: all 0.3s ease 0s;
 }
-.slick-dots li:before,
+.slick-dots span:before,
 .slick-dots li button::before{
   content: "";
 }
-.slick-dots li.slick-active{
+.slick-dots .slick-active span{
   width: 45px;
   background: $color;
 }
-.slick-dots li:hover{
+.slick-dots .slick-active strong{
+  color:$color;
+}
+.slick-dots span:hover{
   width: 45px;
   background: $color;
 
@@ -873,6 +891,9 @@ header{
       line-height: 60px;
     }
   }
+  .slick-dots span{
+    margin: 0 0 30px 0;
+  }
 }
 @media (max-width:1300px) {
   .im_border{
@@ -907,7 +928,7 @@ header{
     padding: 20px 0 20px;
   }
   .news .news_content .news_info {
-    padding: 20px 0 20px
+    padding: 20px 0 20px;
   }
   .mod_par{
     padding-left:100px;
@@ -921,15 +942,9 @@ header{
     }
   }
   .slick-dots {
-    position: absolute;
-    right: 65px;
-    width: 42px;
     top:35%;
-    display:block;
-    text-align: right;
-    height: 40px;
+    right: 5px;
     @include translate(0,-35%);
-    bottom: inherit;
   }
   .social_content{
     display:block;
@@ -1163,11 +1178,6 @@ header{
       line-height: 32px;
     }
   }
-  .slick-dots {
-    top: 30%;
-    right: 20px;
-    @include translate(0, -30%);
-  }
   .btn {
     margin: 20px 0 30px;
     font-weight: bold;
@@ -1324,15 +1334,8 @@ header{
       border-right: 100vmax solid transparent;
     }
   }
-  .slick-dots {
-    top: 30%;
-    right: 10px;
-    @include translate(0, -30%);
-  }
-  .slick-dots li{
-    width: 24px;
-    height: 5px;
-    margin: 0 0 30px 0;
+  .slick-dots span{
+    margin: 0 0 10px 0;
   }
 }
 @media (max-width:500px) {
@@ -1389,5 +1392,20 @@ header{
 @media (max-width:380px) {
   .grid-item {
     margin-left: -50px;
+  }
+  .sl-container{
+    position: relative;
+    overflow: hidden;
+    &:after{
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-bottom: 100px solid $color;
+      border-right: 60vmax solid transparent;
+      left: 0;
+      bottom: 0;
+      z-index: 1;
+    }
   }
 }

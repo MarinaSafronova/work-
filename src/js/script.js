@@ -15,7 +15,7 @@ $(document).ready(function(){
         fade: true,
         dots: true,
         centerMode: true,
-        autoplay:true,
+        autoplay:false,
         arrows: false,
         initialSlide: 1,
         responsive: [
@@ -33,7 +33,7 @@ $(document).ready(function(){
           //you could also debug or look in the source
           console.log(slider);
             console.log(i);
-           return '<span> '+ (i + 1) + '</span>';
+           return '<strong>' + (i + 1) + '</strong>' + '<span>' + '</span>' ;
         }
     });
 
