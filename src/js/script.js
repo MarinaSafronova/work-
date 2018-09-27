@@ -38,8 +38,6 @@ $(document).ready(function(){
            //FYI just have a look at the object to find aviable information
             //press f12 to access the console
           //you could also debug or look in the source
-          console.log(slider);
-            console.log(i);
            return '<strong>' + (i + 1) + '</strong>' + '<span>' + '</span>' ;
         }
     });
@@ -89,6 +87,10 @@ API.bind( "close:finish", function() {
         $icon.removeClass( "is-active" );
     }, 100);
 });
+
+    $("#my-menu a").click(function () {
+        API.close();
+    });
 
 //masonry and isotope
 
@@ -186,7 +188,6 @@ $(document).ready(function(){
 // GET YOUR API HERE https://console.developers.google.com/apis/api
 // https://developers.google.com/youtube/v3/docs/playlistItems/list
 // https://console.developers.google.com/apis/api/youtube.googleapis.com/overview?project=webtut-195115&duration=PT1H
-// <iframe width="560" height="315" src="https://www.youtube.com/embed/qxWrnhZEuRU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 
     var key = 'AIzaSyDo8Ypvh-SVxZHPUo4XclArgx5yACUAonU';
@@ -206,12 +207,11 @@ $(document).ready(function(){
             mainVid(id);
             resultsLoop(data);
             console.log(data);
-
         });
     }
 
     function mainVid(id) {
-        var $frame = $('<iframe width="800" height="400" src=\"//www.youtube.com/embed/'+id+'\"  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
+        var $frame = $('<iframe class="youtube-video"  width="800" height="400" src=\"//www.youtube.com/embed/'+id+'\"  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
         $('#video').html($frame);
     }
     function resultsLoop(data) {
@@ -230,13 +230,17 @@ $(document).ready(function(){
         var id = $(this).attr('data-key');
         console.log(id);
         mainVid(id);
-    });
 
+    });
 
     $(".albumn_listen").click(function () {
         $(".video").css("display", "block");
     });
+
     $(".fa-times").click(function () {
         $(".video").css("display", "none");
+
     });
+
 });
+
