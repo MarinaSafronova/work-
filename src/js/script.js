@@ -1,10 +1,9 @@
 
 $(document).ready(function(){
-
+    'use strict';
     $( "a" ).click(function( event ) {
         event.preventDefault();
     });
-
 
 //slider slick
 
@@ -213,15 +212,14 @@ $(document).ready(function(){
             var title = "<h4>" + item.snippet.title + "</h4>";
             var vid =  item.snippet.resourceId.videoId;
             var img = "<img src='" + thumb.url + "' width=" + thumb.width + " height=" + thumb.height +  "alt='"+ "class"+"=thumb" +">";
-            $('#video').append("<article class='details' data-key=' " +vid+ "'>" +  img + title +"</article>" );
+            $('#video').append("<article class='details' data-key='"+vid+"'>" +  img + title +"</article>" );
         });
     }
     // CLICK EVENt
     $(".video #video").on('click', 'article', function() {
         var id = $(this).attr('data-key');
-        mainVid(id);
         console.log(id);
-
+        mainVid(id);
     });
 
 
@@ -230,5 +228,6 @@ $(document).ready(function(){
     });
     $(".fa-times").click(function () {
         $(".video").css("display", "none");
+
     });
 });
