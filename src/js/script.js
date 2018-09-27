@@ -5,6 +5,7 @@ $(document).ready(function(){
         event.preventDefault();
     });
 
+    /////Scroll
     var $page = $('html, body');
     $('a[href*="#"]').click(function() {
         $page.animate({
@@ -13,7 +14,7 @@ $(document).ready(function(){
         return false;
     });
 
-//slider slick
+    //slider slick start
 
     $('.your-class').slick({
         mobileFirst: true,
@@ -41,7 +42,7 @@ $(document).ready(function(){
            return '<strong>' + (i + 1) + '</strong>' + '<span>' + '</span>' ;
         }
     });
-
+    //End slider slick
 
 //mmenu plugin
     var $menu = $("#my-menu").mmenu({
@@ -128,7 +129,7 @@ API.bind( "close:finish", function() {
         });
     });
 
-    //Validation
+    /////////////////Start Validation
     var form = document.forms.contact;
 
     $(form).submit(function (e) {
@@ -182,7 +183,9 @@ API.bind( "close:finish", function() {
     }
 
 });
+////////////end validation
 
+///////Start api you tube
 $(document).ready(function(){
 // YOU WILL NEED TO ADD YOUR OWN API KEY IN QUOTES ON LINE 5, EVEN FOR THE PREVIEW TO WORK.
 // GET YOUR API HERE https://console.developers.google.com/apis/api
@@ -239,6 +242,7 @@ $(document).ready(function(){
 
     $(".fa-times").click(function () {
         $(".video").css("display", "none");
+        $("iframe").attr("src", $("iframe").attr("src"));
 
     });
 
