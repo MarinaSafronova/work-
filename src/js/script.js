@@ -197,6 +197,7 @@ $(document).ready(function(){
             var id = data.items[0].snippet.resourceId.videoId;
             mainVid(id);
             resultsLoop(data);
+            console.log(data);
         });
     }
 
@@ -212,14 +213,16 @@ $(document).ready(function(){
             var title = "<h4>" + item.snippet.title + "</h4>";
             var vid =  item.snippet.resourceId.videoId;
             var img = "<img src='" + thumb.url + "' width=" + thumb.width + " height=" + thumb.height +  "alt='"+ "class"+"=thumb" +">";
-            $('#video').append("<article class='details' data-key='"+vid+"'>" +  img + title +"</article>" );
+            $('main').append("<article class='details' data-key='"+vid+"'>" +  img + title +"</article>" );
         });
     }
     // CLICK EVENt
-    $(".video #video").on('click', 'article', function() {
+    $(".video main").on('click', 'article', function() {
         var id = $(this).attr('data-key');
         console.log(id);
         mainVid(id);
+
+
     });
 
 
