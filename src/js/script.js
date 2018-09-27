@@ -5,6 +5,14 @@ $(document).ready(function(){
         event.preventDefault();
     });
 
+    var $page = $('html, body');
+    $('a[href*="#"]').click(function() {
+        $page.animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 1200);
+        return false;
+    });
+
 //slider slick
 
     $('.your-class').slick({
@@ -198,6 +206,7 @@ $(document).ready(function(){
             mainVid(id);
             resultsLoop(data);
             console.log(data);
+
         });
     }
 
@@ -221,8 +230,6 @@ $(document).ready(function(){
         var id = $(this).attr('data-key');
         console.log(id);
         mainVid(id);
-
-
     });
 
 
@@ -231,6 +238,5 @@ $(document).ready(function(){
     });
     $(".fa-times").click(function () {
         $(".video").css("display", "none");
-
     });
 });
