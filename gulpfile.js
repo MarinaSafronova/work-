@@ -13,6 +13,9 @@ var gulp     = require('gulp'),
     par      = require('parallax-js'),
     imagemin = require('gulp-imagemin');
     bs       = require('browser-sync');
+    babel    = require('gulp-babel');
+
+
 
 gulp.task('default', ['browsersync', 'watch']);
 
@@ -43,6 +46,7 @@ gulp.task('style', function() {
 gulp.task('script', function() {
     return gulp.src('src/js/script.js')
         .pipe(rename({suffix: '.min'}))
+        .pipe(babel())
         .pipe(uglify())
         .pipe(gulp.dest('pro/js/'))
         .pipe(notify({message: 'Script task is finished'}))

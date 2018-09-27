@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 
     $( "a" ).click(function( event ) {
@@ -170,6 +171,64 @@ API.bind( "close:finish", function() {
             return 'This is not valid email.';
         }
     }
+
 });
 
+$(document).ready(function(){
+// YOU WILL NEED TO ADD YOUR OWN API KEY IN QUOTES ON LINE 5, EVEN FOR THE PREVIEW TO WORK.
+// GET YOUR API HERE https://console.developers.google.com/apis/api
+// https://developers.google.com/youtube/v3/docs/playlistItems/list
+// https://console.developers.google.com/apis/api/youtube.googleapis.com/overview?project=webtut-195115&duration=PT1H
+// <iframe width="560" height="315" src="https://www.youtube.com/embed/qxWrnhZEuRU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+
+    var key = 'AIzaSyDo8Ypvh-SVxZHPUo4XclArgx5yACUAonU';
+    var playlistId = 'RDEMDs8vWIQKMflBG8QUQQaUrw';
+    var URL = 'https://www.googleapis.com/youtube/v3/playlistItems';
+
+    var options = {
+        part: 'snippet',
+        key: key,
+        maxResults: 5,
+        playlistId: playlistId
+    }
+    loadVids();
+    function loadVids() {
+        $.getJSON(URL, options, function (data) {
+            var id = data.items[0].snippet.resourceId.videoId;
+            mainVid(id);
+            resultsLoop(data);
+        });
+    }
+
+    function mainVid(id) {
+        var $frame = $('<iframe width="800" height="400" src=\"//www.youtube.com/embed/'+id+'\"  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>');
+        $('#video').html($frame);
+    }
+    function resultsLoop(data) {
+
+        $.each(data.items, function (i, item) {
+
+            var thumb = item.snippet.thumbnails.medium;
+            var title = "<h4>" + item.snippet.title + "</h4>";
+            var vid =  item.snippet.resourceId.videoId;
+            var img = "<img src='" + thumb.url + "' width=" + thumb.width + " height=" + thumb.height +  "alt='"+ "class"+"=thumb" +">";
+            $('#video').append("<article class='details' data-key=' " +vid+ "'>" +  img + title +"</article>" );
+        });
+    }
+    // CLICK EVENt
+    $(".video #video").on('click', 'article', function() {
+        var id = $(this).attr('data-key');
+        mainVid(id);
+        console.log(id);
+
+    });
+
+
+    $(".albumn_listen").click(function () {
+        $(".video").css("display", "block");
+    });
+    $(".fa-times").click(function () {
+        $(".video").css("display", "none");
+    });
+});
