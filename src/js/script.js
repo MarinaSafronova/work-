@@ -112,9 +112,9 @@ API.bind( "close:finish", function() {
 
 //button read more
 
-	$('#btn_more').click(function(){
-		$('#mode_content').toggle(3000)
-	});
+    $('#btn_more').click(function(){
+        $('#mode_content').toggle(3000)
+    });
 
 // parallax rellax.js
 
@@ -186,15 +186,15 @@ API.bind( "close:finish", function() {
 ////////////end validation
 
 ///////Start api you tube
-$(document).ready(function(){
+
 // YOU WILL NEED TO ADD YOUR OWN API KEY IN QUOTES ON LINE 5, EVEN FOR THE PREVIEW TO WORK.
 // GET YOUR API HERE https://console.developers.google.com/apis/api
 // https://developers.google.com/youtube/v3/docs/playlistItems/list
 // https://console.developers.google.com/apis/api/youtube.googleapis.com/overview?project=webtut-195115&duration=PT1H
-
+    function ListMywork(listId){
 
     var key = 'AIzaSyDo8Ypvh-SVxZHPUo4XclArgx5yACUAonU';
-    var playlistId = 'RDEMDs8vWIQKMflBG8QUQQaUrw';
+    var playlistId = listId;
     var URL = 'https://www.googleapis.com/youtube/v3/playlistItems';
 
     var options = {
@@ -233,18 +233,18 @@ $(document).ready(function(){
         var id = $(this).attr('data-key');
         console.log(id);
         mainVid(id);
-
     });
-
+}
     $(".albumn_listen").click(function () {
         $(".video").css("display", "block");
+        var listId = $(this).attr('data-list');
+        ListMywork(listId);
+        $('main').empty();
     });
 
     $(".fa-times").click(function () {
         $(".video").css("display", "none");
         $("iframe").attr("src", $("iframe").attr("src"));
-
+        $('main').empty();
     });
-
-});
 
