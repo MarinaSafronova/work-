@@ -837,7 +837,6 @@ header{
     padding: 5px;
     border: 2px solid white;
     border-radius: 8px;
-    max-width: 1000px;
     color:$textcolor;
     background-color:$color;
     @include align-items(center);
@@ -1167,8 +1166,15 @@ header{
 @media (max-width:780px) {
   .video iframe{
     max-width: 420px;
+    height: 300px;
   }
-
+  .video article{
+    @include flex-direction(column);
+  }
+  .video article img{
+    width: 200px;
+    height: 100px;
+  }
   .item-sl .header_text {
     position: absolute;
     top: 30%;
