@@ -238,7 +238,7 @@ header{
 	text-align: center;
     position: relative;
     padding: 100px 0 20px;
-    background: url(/pro/img/bgnews.png) no-repeat;
+    background: url(../img/bgnews.png) no-repeat;
     background-position: 84% 8%;
     z-index: 1;
 	.btn{
@@ -373,7 +373,7 @@ header{
 //Block-listen
   .listen {
     padding: 400px 0 300px;
-    background: url(/pro/img/bglisten.png) no-repeat top center;
+    background: url(../img/bglisten.png) no-repeat top center;
     text-align: center;
     background-size:cover;
     position: relative;
@@ -500,7 +500,7 @@ header{
 /*****parallax end*****/
 /*****Social Blog*****/
 .social_bottom{
-  background: url(/pro/img/background2social.png) no-repeat center top;
+  background: url(../img/background2social.png) no-repeat center top;
   position: relative;
   margin-top: -190px;
   padding: 170px 0 300px;
@@ -599,6 +599,7 @@ header{
 		}
 	}
 }
+
 .top_padding{
 	margin-top: 150px;
 }
@@ -620,7 +621,7 @@ header{
   position: relative;
   margin-top: -290px;
   padding: 300px 0 50px;
-  background: url(/pro/img/Backgroundfooter.png) no-repeat bottom;
+  background: url(../img/Backgroundfooter.png) no-repeat bottom;
   background-size: cover;
   text-align: center;
   z-index: 10;
@@ -816,7 +817,7 @@ header{
 //youtube
 .video{
   text-align: center;
-  background: url(/pro/img/youtube.png) no-repeat top;
+  background: url(../img/youtube.png) no-repeat top;
   padding: 40px 50px 30px;
   border-radius: 5px;
   position: absolute;
