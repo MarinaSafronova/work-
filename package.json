@@ -30,7 +30,6 @@
     "gulp-uglify": "^3.0.1",
     "gulp-watch": "^5.0.1",
     "jquery": "^3.3.1",
-    "module-js": "^7.0.1",
-    "parallax-js": "^3.1.0"
+    "module-js": "^7.0.1"
   }
 }

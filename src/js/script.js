@@ -113,7 +113,10 @@ API.bind( "close:finish", function() {
 //button read more
 
     $('#btn_more').click(function(){
-        $('#mode_content').toggle(3000)
+        $('#mode_content').toggle(2400);
+    });
+    $('#albums_btn').click(function(){
+        $('#listentwo').toggle(2400);
     });
 
 // parallax rellax.js
@@ -244,8 +247,87 @@ API.bind( "close:finish", function() {
 
     $(".fa-times").click(function () {
         $(".video").css("display", "none");
-        $("iframe").attr("src", $("iframe").attr("src"));
+        $(".video iframe").attr("src", $(".video iframe").attr("src"));
         $('main').empty();
     });
-///////API FACEBOOK
 
+    ///////API FACEBOOK
+function facebookFunk() {
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '556403224801709',
+            autoLogAppEvents: true,
+            xfbml: true,
+            version: 'v3.1'
+        });
+    };
+
+    (function (d, s, ij) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(ij)) return;
+        js = d.createElement(s);
+        js.id = ij;
+        js.src = 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v3.1&appId=556403224801709&autoLogAppEvents=1';
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+}
+facebookFunk();
+//////twitter
+function twitterkFunk() {
+
+    window.twttr = (function (d, s, ida) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+        if (d.getElementById(ida)) return t;
+        js = d.createElement(s);
+        js.id = ida;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function (f) {
+            t._e.push(f);
+        };
+        return t;
+    }(document, "script", "twitter-wjs"));
+
+}
+function main(){
+    twttr.widgets.createTweet(
+        '1046897574383378432',
+        document.getElementById('tweet-container'),
+        {
+            theme: 'dark',
+        }
+    );
+    // do something else
+}
+twitterkFunk();
+main();
+
+/////instagram api
+
+/*
+var clientid = '1ff13f129e1a430a8f937361241ab443',
+    token='1362124742.3ad74ca.6df307b8ac184c2d830f6bd7c2ac5644',
+    hashtag='music',
+    num_photos = 1;
+
+$.ajax({
+    //https://api.instagram.com/v1/tags/search?q=snowy&access_token=ACCESS-TOKEN
+    //url: 'https://api.instagram.com/v1/tags/search?q=' + hashtag + '&access_token='+token
+
+    url: 'https://api.instagram.com/v1/tags/'+hashtag+'/media/recent/?access_token='+token,
+    dataType: 'jsonp',
+    type: 'GET',
+    data: {client_id: clientid, count: num_photos},
+    success: function(data){
+        console.log(data);
+        for(var i in data.data){
+            $('#instafeed').append('<img class="img" src="'+data.data[i].images.standard_resolution.url+'">');
+        }
+    },
+    error: function(data){
+        console.log('error');
+    }
+});*/

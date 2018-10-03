@@ -3,14 +3,12 @@
 
 var gulp     = require('gulp'),
     minify   = require('gulp-clean-css'),
-    jQ       = require('jQuery'),
     sass     = require('gulp-sass'),
     rename   = require('gulp-rename'),
     concat   = require('gulp-concat'),
     notify   = require('gulp-notify'),
     uglify   = require('gulp-uglify'),
     watch    = require('gulp-watch'),
-    par      = require('parallax-js'),
     imagemin = require('gulp-imagemin');
     bs       = require('browser-sync');
     babel    = require('gulp-babel');

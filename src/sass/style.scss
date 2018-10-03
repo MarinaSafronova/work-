@@ -371,9 +371,15 @@ header{
 	display:none;
 }
 //Block-listen
+#listentwo{
+  display:none;
+}
+.albums_btn{
+  cursor: pointer;
+}
   .listen {
-    padding: 400px 0 300px;
-    background: url(../img/bglisten.png) no-repeat top center;
+    padding: 400px 0 360px;
+    background: url(../img/bglisten.png) repeat-x  top center;
     text-align: center;
     background-size:cover;
     position: relative;
@@ -400,7 +406,7 @@ header{
 	.listen_content{
 		@include flexbox;
 		@include justify-content(space-around);
-		padding: 90px 0;
+		padding: 100px 0 20px;
 		.albumn_listen{
 			margin-bottom:30px;
 			border-radius: 5px;
@@ -496,13 +502,12 @@ header{
 .mod_par{
 	padding-left:160px;
 }
-
 /*****parallax end*****/
 /*****Social Blog*****/
 .social_bottom{
   background: url(../img/background2social.png) no-repeat center top;
   position: relative;
-  margin-top: -190px;
+  margin-top: -226px;
   padding: 170px 0 300px;
   background-size: cover;
   clear: both;
@@ -543,7 +548,7 @@ header{
 	padding: 60px;
 	background:rgba(92,77,102, 0.7);
 	border-radius: 5px;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 	p{
 		font-size: 26px;
 		line-height:36px;
@@ -577,7 +582,7 @@ header{
 .info_big{
 	background:rgba(92,77,102, 0.7);
 	border-radius: 5px;
-	margin-bottom: 30px;
+	margin-bottom: 10px;
 	.mod_a{
 		color: $texta;
 	}
@@ -586,22 +591,33 @@ header{
 		border-top-left-radius: 5px;
 		margin-bottom: 50px;
 	}
-	p{
-		font-family: $family_two;
-		font-size: 18px;
-		line-height: 30px;
-		padding: 30px 60px;
-	}
+  .fb-comment-embed{
+    line-height: 30px;
+    position: relative;
+    padding: 10px 10px;
+    background-color: rgba(255,255,255, 0.9);
+    margin-bottom: 60px;
+    left: 50%;
+    z-index: 30;
+    @include translate(-50%,0);
+  }
 	.info_blog{
-		padding: 0 60px 70px;
+		padding: 10px 20px 50px;
 		.img_blog{
 			margin-right: 20px;
 		}
 	}
 }
-
+#tweet-container{
+  width: 100%;
+  margin: 0 auto;
+}
+#rudr_instafeed li img{
+  max-width:100%;
+  max-height:100%;
+}
 .top_padding{
-	margin-top: 150px;
+	margin-top: 100px;
 }
 .instagram{
 	background: $textspan;
@@ -616,7 +632,6 @@ header{
 	background: $line;
 }
 /*****Footer*****/
-
 .sign{
   position: relative;
   margin-top: -290px;
@@ -817,7 +832,7 @@ header{
 //youtube
 .video{
   text-align: center;
-  background: url(../img/youtube.png) no-repeat top;
+  background: url(../img/youtube.png) repeat-x top;
   padding: 40px 50px 30px;
   border-radius: 5px;
   position: absolute;
@@ -1090,19 +1105,11 @@ header{
     img{
       margin-bottom: 10px;
     }
-    p{
-      padding: 30px 30px;
-    }
     .info_blog{
       padding: 0 30px 30px;
       .img_blog{
          margin-right: 20px;
        }
-       p {
-        font-size: 18px;
-        line-height: 30px;
-        padding: 20px 20px;
-      }
     }
   }
   .info_mini {
@@ -1241,6 +1248,7 @@ header{
       padding: 0;
     }
   }
+
   .social_bottom{
     margin-top: -80px;
     padding: 100px 0 300px;
@@ -1257,9 +1265,6 @@ header{
     margin-bottom: 10px;
     img{
       margin-bottom: 10px;
-    }
-    p{
-      padding: 20px 20px;
     }
     .info_blog{
       padding: 0 20px 20px;
