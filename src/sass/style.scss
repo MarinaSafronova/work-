@@ -238,8 +238,7 @@ header{
 	text-align: center;
     position: relative;
     padding: 100px 0 20px;
-    background: url(../img/bgnews.png) no-repeat;
-    background-position: 84% 8%;
+    background: url(../img/bgnews.png) no-repeat 84% 8%;
     z-index: 1;
 	.btn{
 		margin-bottom:0;
@@ -508,9 +507,8 @@ header{
   background: url(../img/background2social.png) no-repeat center top;
   position: relative;
   margin-top: -226px;
-  padding: 170px 0 300px;
+  padding: 170px 0 330px;
   background-size: cover;
-  clear: both;
   z-index: 5;
 	.nav_bottom {
         width:10%;
@@ -531,24 +529,29 @@ header{
 		}
 	}
 }
+
 .grid{
   width: 100%;
   margin: 0 auto;
+  display: block;
 }
+
 .grid-item{
 	width: 370px;
 }
+
 .social_content{
 	@include flexbox;
 	@include justify-content(space-between);
 	 padding: 0 100px;
 }
-
 .info_mini{
-	padding: 60px;
+	padding: 30px;
 	background:rgba(92,77,102, 0.7);
 	border-radius: 5px;
 	margin-bottom: 10px;
+    height: 230px;
+    display: block;
 	p{
 		font-size: 26px;
 		line-height:36px;
@@ -559,6 +562,8 @@ header{
 		margin-right: 20px;
 	}	
 }
+
+
 .info_blog{
 	@include flexbox;
 	@include justify-content(flex-start);
@@ -579,26 +584,26 @@ header{
 		text-align: center;
 	}
 }
+
 .info_big{
 	background:rgba(92,77,102, 0.7);
 	border-radius: 5px;
 	margin-bottom: 10px;
+    height: 530px;
 	.mod_a{
 		color: $texta;
 	}
-	img{
-		border-top-right-radius: 5px;
-		border-top-left-radius: 5px;
-		margin-bottom: 50px;
-	}
+
+
   .fb-comment-embed{
     line-height: 30px;
     position: relative;
     padding: 10px 10px;
     background-color: rgba(255,255,255, 0.9);
-    margin-bottom: 60px;
     left: 50%;
     z-index: 30;
+    width: 100%;
+    margin-bottom: 10px;
     @include translate(-50%,0);
   }
 	.info_blog{
@@ -608,21 +613,13 @@ header{
 		}
 	}
 }
-#tweet-container{
-  width: 100%;
-  margin: 0 auto;
-}
-#rudr_instafeed li img{
-  max-width:100%;
-  max-height:100%;
-}
+
 .top_padding{
-	margin-top: 100px;
+	margin-top: 160px;
 }
 .instagram{
 	background: $textspan;
 }
-
 .youtube{
 	background: $textspan;
 }
@@ -631,6 +628,9 @@ header{
 }
 .twitter{
 	background: $line;
+}
+.height_tw{
+  height: 660px;
 }
 /*****Footer*****/
 .sign{
@@ -1103,9 +1103,6 @@ header{
   }
   .info_big{
     margin-bottom: 10px;
-    img{
-      margin-bottom: 10px;
-    }
     .info_blog{
       padding: 0 30px 30px;
       .img_blog{
@@ -1170,6 +1167,9 @@ header{
       font-size: 26px;
       line-height: 38px;
     }
+  }
+  .height_tw{
+    height: 550px;
   }
 }
 @media (max-width:780px) {
@@ -1240,8 +1240,9 @@ header{
   }
 
   .listen {
-    padding: 30px 0 30px;
-    background: url(../img/bglistentwo.png) no-repeat;
+    padding: 30px 0 60px;
+    background: none;
+    background-color: #1b2550;
     p {
       margin-bottom: 20px;
     }
@@ -1264,24 +1265,13 @@ header{
   }
   .info_big{
     margin-bottom: 10px;
-    img{
-      margin-bottom: 10px;
-    }
+    height: 630px;
     .info_blog{
-      padding: 0 20px 20px;
+      padding: 0 20px 10px;
       .img_blog{
         margin-right: 20px;
       }
-      p {
-        font-size: 18px;
-        line-height: 26px;
-        padding: 15px 15px;
-      }
     }
-  }
-  .info_mini {
-    padding: 20px;
-    margin-bottom: 10px;
   }
   .sign {
     margin-top: -200px;
@@ -1320,6 +1310,9 @@ header{
       margin-left: 3px;
       font-size: 14px;
     }
+  }
+  .height_tw{
+    height: 525px;
   }
 }
 @media (max-width:690px) {
